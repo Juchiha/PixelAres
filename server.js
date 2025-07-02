@@ -179,4 +179,10 @@ app.get('/whatsapp/qr/:sessionId', async (req, res) => {
     res.send(`<img src="${qrCodes[sessionId]}" alt="QR Code">`);
 });
 
+app.get('/whatsapp/health/', async (req, res) => {
+    console.log('Servidor API corriendo en http://localhost:3000/whatsapp/status OK')
+    return res.status(200).json({ msg: 'Aplicacion corriendo sin problema.' });
+});
+
+
 app.listen(3000, () => console.log('Servidor API corriendo en http://localhost:3000'));
